@@ -6,7 +6,7 @@
 package mx.itson.wingman.DAO;
 
 /**
- *
+ * Una clase que se encarga de interactuar con la base de datos para realizar operaciones de creación, lectura, actualización y eliminación de destinos.
  * @author Emmanuel
  */
 public class DestinoDAO {

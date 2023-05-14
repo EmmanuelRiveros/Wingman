@@ -6,7 +6,7 @@
 package mx.itson.wingman.enumeradores;
 
 /**
- *
+ * Un enumerador que representa los posibles estados en los que puede estar un piloto
  * @author Emmanuel
  */
 public enum EstadoPiloto {

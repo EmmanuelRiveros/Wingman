@@ -6,7 +6,7 @@
 package mx.itson.wingman.excepciones;
 
 /**
- *
+ * Una excepción que se lanza cuando se intenta crear un trabajo que ya existe.
  * @author Emmanuel
  */
 public class TrabajoCreadoException extends Exception{

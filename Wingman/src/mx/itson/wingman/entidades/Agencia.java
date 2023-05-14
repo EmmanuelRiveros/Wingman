@@ -6,7 +6,7 @@
 package mx.itson.wingman.entidades;
 
 /**
- *
+ * Una clase que representa una agencia con un nombre, dirección y teléfono. Tiene métodos para actualizar y obtener estos valores.
  * @author Emmanuel
  */
 public class Agencia {

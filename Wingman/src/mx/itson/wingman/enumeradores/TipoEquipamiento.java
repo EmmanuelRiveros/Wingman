@@ -6,7 +6,7 @@
 package mx.itson.wingman.enumeradores;
 
 /**
- *
+ * Un enumerador que representa los diferentes tipos de equipamiento disponibles
  * @author Emmanuel
  */
 public enum TipoEquipamiento {

@@ -6,7 +6,7 @@
 package mx.itson.wingman.excepciones;
 
 /**
- *
+ * Una excepción que se lanza cuando no se puede guardar una entidad en la base de datos.
  * @author Emmanuel
  */
 public class ErrorGuardadoException extends Exception{

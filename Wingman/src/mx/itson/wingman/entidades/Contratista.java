@@ -1,7 +1,7 @@
 package mx.itson.wingman.entidades;
 
 /**
- *
+ * Una clase que representa un contratista con un nombre, trabajo y contacto. Tiene métodos para actualizar y obtener estos valores.
  * @author Emmanuel
  */
 public class Contratista {
