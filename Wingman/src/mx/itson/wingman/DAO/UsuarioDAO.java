@@ -1,14 +1,24 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-package mx.itson.wingman.DAO;
 
+package  mx.itson.wingman.DAO;
+import java.util.List;
+import mx.itson.wingman.entidades.Usuario;
 /**
- * Una clase que se encarga de interactuar con la base de datos para realizar operaciones de creación, lectura, actualización y eliminación de usuarios.
- * @author Emmanuel
+ *
+ * @author paulp
  */
 public class UsuarioDAO {
-    
-}
+        private List<Usuario> usuarios;
+        
+        public List<Usuario> getusuarios() {
+            return usuarios;
+        }
+        
+        public void setusuarios(List<Usuario> usuarios){
+            this.usuarios = usuarios;
+        }
+        
+     }
+
