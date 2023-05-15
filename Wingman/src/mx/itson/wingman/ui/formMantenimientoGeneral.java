@@ -165,15 +165,21 @@ public class formMantenimientoGeneral extends javax.swing.JDialog {
     }//GEN-LAST:event_btnRemoverActionPerformed
 
     private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
-        Boolean resultado = Avion.editarColumna(ids, "estadoAvion", "MANTENIMIENTO");
         
-        if(resultado){
-            JOptionPane.showMessageDialog(this, "El registro se actualizo correctamente", "Estado cambiado", JOptionPane.INFORMATION_MESSAGE);
+        if (ids.isEmpty()){
+            this.dispose();
         } else {
-            JOptionPane.showMessageDialog(this, "Ocurrió un error al cambiar el estado", "Error estado", JOptionPane.ERROR_MESSAGE);
-        }      
+            Boolean resultado = Avion.editarColumna(ids, "estadoAvion", "MANTENIMIENTO");
         
-        this.dispose();
+            if(resultado){
+                JOptionPane.showMessageDialog(this, "El registro se actualizo correctamente", "Estado cambiado", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Ocurrió un error al cambiar el estado", "Error estado", JOptionPane.ERROR_MESSAGE);
+            }      
+
+            this.dispose();
+        }
+        
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
     /**

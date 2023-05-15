@@ -10,23 +10,22 @@ package mx.itson.wingman.entidades;
  */
 public class Destino {
 
-    public class destino {
-      private int airbaseld;
+        private int airbaseId;
         private String airbaseNombre;
-        private Ruta Ruta;
+        private String Ruta;
         private String ubicacion;
         /**
          * @return the airbaseld
          */
-        public int getAirbaseld() {
-            return airbaseld;
+        public int getAirbaseId() {
+            return airbaseId;
         }
 
         /**
          * @param airbaseld the airbaseld to set
          */
-        public void setAirbaseld(int airbaseld) {
-            this.airbaseld = airbaseld;
+        public void setAirbaseId(int airbaseld) {
+            this.airbaseId = airbaseld;
         }
 
         /**
@@ -46,14 +45,14 @@ public class Destino {
         /**
          * @return the Ruta
          */
-        public Ruta getRuta() {
+        public String getRuta() {
             return Ruta;
         }
 
         /**
          * @param Ruta the Ruta to set
          */
-        public void setRuta(Ruta Ruta) {
+        public void setRuta(String Ruta) {
             this.Ruta = Ruta;
         }
 
@@ -72,5 +71,4 @@ public class Destino {
         }
   
         
-    }
 }

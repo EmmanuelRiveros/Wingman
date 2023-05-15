@@ -19,6 +19,9 @@ public class Vuelo {
     private Ruta ruta;
     private Piloto piloto;
     private String clima;
+    
+    
+    
     /**
      * @return the avion
      */

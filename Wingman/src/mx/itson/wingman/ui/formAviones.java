@@ -124,7 +124,7 @@ public class formAviones extends javax.swing.JFrame {
         int filaSeleccionada = tblAviones.getSelectedRow();
 
         // Verificar si se ha seleccionado una fila
-        if (filaSeleccionada != -1 && !(filaSeleccionada > 1)) {
+        if (filaSeleccionada != -1 && tblAviones.getSelectedRowCount() < 2) {
             // Obtener los valores de la fila seleccionada
             String id = tblAviones.getValueAt(filaSeleccionada, 0).toString();
             String nombre = tblAviones.getValueAt(filaSeleccionada, 1).toString();

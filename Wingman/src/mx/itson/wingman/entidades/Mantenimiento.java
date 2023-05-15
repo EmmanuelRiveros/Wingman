@@ -11,10 +11,10 @@ package mx.itson.wingman.entidades;
  */
 public class Mantenimiento {
 
-    
-     private int id;
+    private int id;
     private String nombre;
     private String contacto;
+    
     /**
      * @return the id
      */

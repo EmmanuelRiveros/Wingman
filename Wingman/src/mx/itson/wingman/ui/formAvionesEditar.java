@@ -76,6 +76,11 @@ public class formAvionesEditar extends javax.swing.JDialog {
         lblTipoAvion.setText("Tipo Avión");
 
         cmbTipoAvion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carga", "Transporte", "Interceptor", "Atacante", "Polivalente", "AWACS" }));
+        cmbTipoAvion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbTipoAvionActionPerformed(evt);
+            }
+        });
 
         lblTipoAvion1.setText("Estado Avión");
 
@@ -257,6 +262,10 @@ public class formAvionesEditar extends javax.swing.JDialog {
             this.dispose();
         }
     }//GEN-LAST:event_btnFinalizarActionPerformed
+
+    private void cmbTipoAvionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoAvionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbTipoAvionActionPerformed
 
     public void setId(String text) {
         id = Integer.parseInt(text);

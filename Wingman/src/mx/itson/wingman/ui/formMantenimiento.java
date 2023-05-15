@@ -34,6 +34,11 @@ public class formMantenimiento extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
 
         btnRepostaje.setText("Repostaje");
         btnRepostaje.addActionListener(new java.awt.event.ActionListener() {
@@ -92,6 +97,15 @@ public class formMantenimiento extends javax.swing.JFrame {
         formMantenimientoGeneral.setVisible(true);
 
     }//GEN-LAST:event_btnMantenimientoActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // Abrir nueva ventana
+        formTrabajo formTrabajo = new formTrabajo();
+        formTrabajo.setVisible(true);
+
+        // Cerrar ventana actual
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments

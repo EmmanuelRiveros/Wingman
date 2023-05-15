@@ -50,6 +50,11 @@ public class formTrabajo extends javax.swing.JFrame {
         });
 
         btnVuelos.setText("Vuelos");
+        btnVuelos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVuelosActionPerformed(evt);
+            }
+        });
 
         btnMantenimiento.setText("Mantenimiento");
         btnMantenimiento.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +104,12 @@ public class formTrabajo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPilotosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPilotosActionPerformed
-        // TODO add your handling code here:
+        // Abrir nueva ventana
+        formPilotos formPilotos = new formPilotos();
+        formPilotos.setVisible(true);
+
+        // Cerrar ventana actual
+        this.dispose();
     }//GEN-LAST:event_btnPilotosActionPerformed
 
     private void btnAvionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvionesActionPerformed
@@ -112,8 +122,17 @@ public class formTrabajo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAvionesActionPerformed
 
     private void btnMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantenimientoActionPerformed
-        // TODO add your handling code here:
+        // Abrir nueva ventana
+        formMantenimiento formMantenimiento = new formMantenimiento();
+        formMantenimiento.setVisible(true);
+
+        // Cerrar ventana actual
+        this.dispose();
     }//GEN-LAST:event_btnMantenimientoActionPerformed
+
+    private void btnVuelosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVuelosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVuelosActionPerformed
 
     /**
      * @param args the command line arguments

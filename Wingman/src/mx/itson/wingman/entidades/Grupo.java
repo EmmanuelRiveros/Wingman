@@ -11,7 +11,7 @@ package mx.itson.wingman.entidades;
  */
 public class Grupo {
 
-     private int id;
+    private int id;
     private String nombre;
     private String tarea;
     /**

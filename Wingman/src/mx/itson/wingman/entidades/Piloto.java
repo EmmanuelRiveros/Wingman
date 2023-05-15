@@ -1,6 +1,6 @@
 package mx.itson.wingman.entidades;
 import mx.itson.wingman.enumeradores.TipoAvion;
-
+import mx.itson.wingman.enumeradores.EstadoPiloto;
 /**
  *
  * @author lm
@@ -9,7 +9,7 @@ public class Piloto {
     private int pilotoId;
     private String nombre;
     private TipoAvion especialidad;
-    private Estado estado;
+    private EstadoPiloto estado;
 
     public int getPilotoId() {
         return pilotoId;
@@ -35,11 +35,11 @@ public class Piloto {
         this.especialidad = especialidad;
     }
 
-    public Estado getEstado() {
+    public EstadoPiloto getEstado() {
         return estado;
     }
 
-    public void setEstado(Estado estado) {
+    public void setEstado(EstadoPiloto estado) {
         this.estado = estado;
     }
     

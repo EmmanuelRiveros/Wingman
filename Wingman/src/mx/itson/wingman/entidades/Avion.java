@@ -202,6 +202,63 @@ public class Avion {
         return aviones;
     }
     
+    public static Avion buscarPorNombre(String nombre) {
+        Avion avion = null;
+        try {
+            Connection conexion = Conexion.obtener();
+            PreparedStatement statement = conexion.prepareStatement("SELECT id, nombre, modelo, fabricante, capacidad, tipoAvion, estadoAvion, avionCarguero, avionCombate FROM aviones WHERE nombre = ?");
+            statement.setString(1, nombre);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                avion = new Avion();
+                avion.setId(resultSet.getInt("id"));
+                avion.setNombre(resultSet.getString("nombre"));
+                avion.setModelo(resultSet.getString("modelo"));
+                avion.setFabricante(resultSet.getString("fabricante"));
+                avion.setCapacidad(resultSet.getInt("capacidad"));
+                avion.setTipoAvion(TipoAvion.valueOf(resultSet.getString("tipoAvion")));
+                avion.setEstadoAvion(EstadoAvion.valueOf(resultSet.getString("estadoAvion")));
+                avion.setAvionCarguero(resultSet.getString("avionCarguero").equals("SI"));
+                avion.setAvionCombate(resultSet.getString("avionCombate").equals("NO"));
+            }
+            conexion.close();
+        } catch (Exception ex) {
+            System.err.println("Ocurrió un error al buscar el avión por nombre: " + ex.getMessage());
+        }
+        return avion;
+    }
+    
+    public static Avion buscarPorId(int id){
+        Avion avion = null;
+        try {
+            Connection conexion = Conexion.obtener();
+            String consulta = "SELECT id, nombre, modelo, fabricante, capacidad, tipoAvion, estadoAvion, avionCarguero, avionCombate "
+                    + "FROM aviones WHERE id = ?";
+            PreparedStatement statement = conexion.prepareStatement(consulta);
+            statement.setInt(1, id);
+
+            ResultSet resultSet = statement.executeQuery();
+        
+            if (resultSet.next()) {
+                avion = new Avion();
+                avion.setId(resultSet.getInt(1));
+                avion.setNombre(resultSet.getString(2));
+                avion.setModelo(resultSet.getString(3));
+                avion.setFabricante(resultSet.getString(4));
+                avion.setCapacidad(resultSet.getInt(5));
+                avion.setTipoAvion(TipoAvion.valueOf(resultSet.getString(6)));
+                avion.setEstadoAvion(EstadoAvion.valueOf(resultSet.getString(7)));
+                avion.setAvionCarguero(resultSet.getString(8).equals("SI"));
+                avion.setAvionCombate(resultSet.getString(9).equals("NO"));
+            }
+            conexion.close();
+        } catch (Exception ex) {
+            System.err.println("Ocurrió un error: " + ex.getMessage());
+        }
+        return avion;
+    }
+    
     /**
      * @return the id
      */

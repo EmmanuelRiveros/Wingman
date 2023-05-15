@@ -11,6 +11,5 @@ package mx.itson.wingman.enumeradores;
  */
 public enum EstadoPiloto {
     DISPONIBLE, NO_DISPONIBLE,
-    EN_VUELO, KIA, MIA
-    
+    EN_VUELO, KIA, MIA  
 }
