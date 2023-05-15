@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mx.itson.wingman.enumeradores;
+package mx.itson.wingman.DAO;
 
 /**
  *
- * @author jorge
+ * @author emman
  */
-public enum EstadoAvion {
-    EN_HANGAR, MANTENIMIENTO, EN_VUELO, KIA, 
-    MIA, REPOSTANDO
+public class PilotoDAO {
+    
 }

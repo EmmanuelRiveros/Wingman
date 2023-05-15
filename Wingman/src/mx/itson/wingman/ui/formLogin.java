@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package mx.itson.wingman.ui;
+import javax.swing.JOptionPane;
+import mx.itson.wingman.negocio.Operacion;
 
 /**
  *
@@ -57,21 +59,23 @@ public class formLogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtUsuario)
                             .addComponent(txtContra)
-                            .addComponent(btnIniciar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(27, 27, 27))
+                            .addComponent(btnIniciar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(42, 42, 42))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(64, 64, 64))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(75, 75, 75)))
+                .addContainerGap(13, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel3)
-                .addGap(64, 64, 64))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(75, 75, 75))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,7 +99,25 @@ public class formLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-            
+            if (Operacion.comprobarConexion()){            
+                String nombre = txtUsuario.getText();
+                String contra = txtContra.getText();
+                
+                // Comprobar credenciales si hay conexión a internet
+                if (Operacion.verificarCredenciales(nombre, contra)){
+                    // Abrir nueva ventana
+                    formTrabajo formTrabajo = new formTrabajo();
+                    formTrabajo.setVisible(true);
+
+                    // Cerrar ventana actual
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Las credenciales ingresadas son incorrectas", "Error al iniciar sesión", JOptionPane.ERROR_MESSAGE);
+                }         
+            } else {
+                // Mostrar mensaje de error si no hay conexión a Internet
+                JOptionPane.showMessageDialog(this, "No hay conexión a Internet", "Error de conexión", JOptionPane.ERROR_MESSAGE);
+            }
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     /**
